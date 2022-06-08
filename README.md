@@ -1,2 +1,0 @@
-# tiddlyetude
-Etude Tiddlywiki
