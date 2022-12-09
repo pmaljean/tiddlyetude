@@ -1,0 +1,68 @@
+created: 20221209092206756
+modified: 20221209100012044
+tags: 
+title: Select-v2
+
+
+; Catégorie nouvel article :
+<$select tiddler='demo' field='mytag'>
+<!--  field =  mytag : demo  -->
+<option><$action-setfield demo/>Linux</option>
+<option><$action-setfield demo/>Git</option>
+<option><$action-setfield demo/>Animation</option>
+</$select>
+
+;  COLOR
+
+<$select tiddler='demo' field='color' tooltip='Choose a color'>
+<!--  field =  color : colorname  -->
+<option><$action-setfield demo/>#f00</option>
+<option><$action-setfield demo/>#0f0</option>
+<option><$action-setfield demo/>#00f</option>
+</$select>
+
+;  ICON
+
+<$select tiddler='demo' field='icon' tooltip='Choose a ICON'>
+<!--  field =  icon : colorname  -->
+<option><$action-setfield demo/>$:/core/images/globe</option>
+<option><$action-setfield demo/>$:/core/images/folder</option>
+<option><$action-setfield demo/>$:/core/images/mail</option>
+</$select>
+
+
+
+; Tag nouvel article :
+<$select tiddler='demo' field='categorie'>
+<option><$action-setfield demo/>cat1</option>
+<option><$action-setfield demo/>cat2</option>
+<option><$action-setfield demo/>cat3</option>
+</$select>
+
+
+<!--  ATTENTION edit-text =  text field !! -->
+
+<!--  reset demo   -->
+
+
+
+; Caption :
+<$edit-text tiddler="demo" field="caption"/>
+
+; Titre  for new tiddler : 
+<$edit-text tiddler="demo" tag="input" default=""/>
+
+
+<$button>
+<$action-createtiddler $basetitle={{demo!!text}} tags={{demo!!mytag}} $template="demo">
+<$action-navigate $to=<<createTiddler-title>>/>
+</$action-createtiddler>
+Create new tiddler + title and open the tiddler
+</$button>
+
+''+  style by data tags''
+
+; BEST 
+* iftag = Linux  =>  icon, color etc....
+
+; Améliorer avec list filter (?)  pour afficher des noms dans "option"  SelectWidget
